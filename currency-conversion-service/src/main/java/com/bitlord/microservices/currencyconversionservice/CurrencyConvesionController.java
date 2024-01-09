@@ -19,7 +19,7 @@ public class CurrencyConvesionController {
 	private CurrencyExchangeProxy proxy;
 	
 	
-	// Main Template (Old & Hard)
+	// REST Template (Old & Hard)
 	@GetMapping ( "/currency-conversion/from/{from}/to/{to}/quantity/{quantity}" )
 	public CurrencyConversion calculateCurrencyConversion ( @PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity ) {
 	
@@ -46,7 +46,7 @@ public class CurrencyConvesionController {
 				from, to, quantity, 
 				currencyConversion.getConversionMultiple(), 
 				quantity.multiply( currencyConversion.getConversionMultiple() ), 
-				currencyConversion.getEnvironment() 
+				currencyConversion.getEnvironment()  + " " + "REST Template"
 			);
 		
 	}
@@ -66,7 +66,7 @@ public class CurrencyConvesionController {
 				from, to, quantity, 
 				currencyConversion.getConversionMultiple(), 
 				quantity.multiply( currencyConversion.getConversionMultiple() ), 
-				currencyConversion.getEnvironment() 
+				currencyConversion.getEnvironment() + " " + "Feign"
 			);
 		
 	}
