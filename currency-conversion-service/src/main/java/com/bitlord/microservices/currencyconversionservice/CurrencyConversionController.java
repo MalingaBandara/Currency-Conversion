@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @RestController
-public class CurrencyConvesionController {
+public class CurrencyConversionController {
 	
 	
 	@Autowired
